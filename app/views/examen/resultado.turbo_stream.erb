@@ -1,0 +1,10 @@
+<%= turbo_stream.replace "resultado" do %>
+  <div id="resultado">
+    <h1>Resultados del Examen</h1>
+    <p>¡Has completado el examen!</p>
+    <p>Respondiste correctamente <%= @correctas %> de <%= @total %> preguntas.</p>
+    <p>¿Quieres intentarlo de nuevo?</p>
+
+    <%= button_to "Reiniciar Examen", root_path, method: :get %>
+  </div>
+<% end %>

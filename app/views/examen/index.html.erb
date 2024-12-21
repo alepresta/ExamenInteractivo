@@ -1,0 +1,9 @@
+<h1>Examen Interactivo</h1>
+<p>Selecciona la cantidad de preguntas:</p>
+<%= form_with url: preguntas_examen_path, method: :get do %>
+  <%= radio_button_tag :cantidad, 5 %>  5 preguntas<br>
+  <%= radio_button_tag :cantidad, 30 %> 30 preguntas<br>
+  <%= radio_button_tag :cantidad, 60 %> 60 preguntas<br>
+  <%= radio_button_tag :cantidad, "todas" %> Todas las preguntas<br>
+  <%= submit_tag "Iniciar Examen" %>
+<% end %>

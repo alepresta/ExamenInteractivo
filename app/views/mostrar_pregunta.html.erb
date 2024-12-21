@@ -1,0 +1,9 @@
+<h1>Pregunta <%= @indice + 1 %> de <%= session[:preguntas].size %></h1>
+<p><%= @pregunta_actual["pregunta"] %></p>
+<%= form_with url: responder_examen_path, method: :post do %>
+  <%= hidden_field_tag :indice, @indice %>
+  <% @pregunta_actual["opciones"].each do |letra, opcion| %>
+    <%= radio_button_tag :respuesta, letra %> <%= letra %>) <%= opcion %><br>
+  <% end %>
+  <%= submit_tag "Responder" %>
+<% end %>

@@ -1,0 +1,17 @@
+<%= turbo_stream.replace "respuesta" do %>
+  <div id="respuesta">
+    <h1>Respuesta a la Pregunta</h1>
+    <p><%= @pregunta_actual["pregunta"] %></p>
+    <% @pregunta_actual["opciones"].each do |letra, opcion| %>
+      <p><%= letra %>) <%= opcion %></p>
+    <% end %>
+    <p>Tu respuesta: <%= @respuesta %></p>
+    <% if @correcta %>
+      <p style="color: green;">¡Correcto! Felicitaciones.</p>
+    <% else %>
+      <p style="color: red;">Incorrecto. La respuesta correcta es: <%= @respuesta_correcta %>.</p>
+    <% end %>
+    <%= button_to "Siguiente", siguiente_examen_path, method: :post %>
+  </div>
+<% end %>
+
